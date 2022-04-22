@@ -18,7 +18,23 @@ str2 = 'Tom B: no Spiderman, Justin N: no Spiderman, Emily B: wrote about Spider
 ***********************************************************************/
 
     // Your code here
-
+let spiderManWriters = string => {
+    let didNotWrite = {};
+    let keyValuePairs = string.split(', ');
+    let parsedArray = [];
+    for (let i = 0; i < keyValuePairs.length; i++) {
+        let pair = keyValuePairs[i]
+        parsedArray.push(...pair.split(': '));
+    }
+    for (let j = 0; j < parsedArray.length; j++) {
+        if (j % 2 !== 0) {
+            if (parsedArray[j] === 'no Spiderman') {
+                didNotWrite[parsedArray[j-1]] = parsedArray[j];
+            }
+        }
+    }
+    return didNotWrite;
+}
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try{
     module.exports = spiderManWriters;
