@@ -21,6 +21,12 @@ manyArgs(1, 2, 5, 6) // 60
 ***********************************************************************/
 
 // Your code here
+let manyArgs = (...args) => { // ...args is an array of arguments
+    return args.reduce((acc, val) => {
+        acc *= val;
+        return acc; // need to return your accumulator when you use reduce
+    });
+}
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try{

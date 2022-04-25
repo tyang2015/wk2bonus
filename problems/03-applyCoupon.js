@@ -28,7 +28,19 @@ console.log(applyCoupon(20, wishList)); // => 78.4;
 *******************************************************************************/
 
     // Your code here
+let applyCoupon = (discount, wishList) => {
+    let prices = [];
+    for (let i = 0; i < wishList.length; i ++) {
+        let obj = wishList[i];
+        prices.push(obj['price']);
+    }
+    let sum = prices.reduce((acc, val) => {
+        acc += val;
+        return acc;
+    }, 0)
 
+    return sum * (1 - (discount/100));
+}
 /*****************DO NOT MODIFY ANYTHING UNDER THIS LINE**********************/
 try{
     module.exports = applyCoupon;

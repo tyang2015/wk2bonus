@@ -28,7 +28,14 @@ newDice3(2); // 24
 ***********************************************************************/
 
     // Your code here
+  let dynamicDice = sides => {
+    return function(rolls) {
+      return rolls * sides;
+    }
+  }
 
+  const newDice = dynamicDice(20); // returns a function
+  console.log(newDice(5)); // 100
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try{
   module.exports = dynamicDice;
